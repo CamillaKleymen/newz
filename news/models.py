@@ -12,11 +12,12 @@ class CategoryModel(models.Model):
         verbose_name = 'News category'
         verbose_name_plural = 'News categories'
 
+
 class NewsModel(models.Model):
-    news_title = models.CharField(max_length=50, help_text='here you should enter name of product')
+    news_title = models.CharField(max_length=50)
     news_category = models.ForeignKey(CategoryModel, on_delete=models.CASCADE)
     news_country = models.CharField(max_length=30)
-    news_count = models.IntegerField()
+    news_date = models.DateField()
     news_description = models.TextField()
     news_image = models.FileField(upload_to='news_images')
     news_created_at = models.DateTimeField(auto_now_add=True)
@@ -27,5 +28,3 @@ class NewsModel(models.Model):
     class Meta:
         verbose_name = 'Announcement'
         verbose_name_plural = 'News'
-
-
