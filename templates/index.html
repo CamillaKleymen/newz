@@ -1,0 +1,25 @@
+{% static load%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}News Form{% endblock %}</title>
+</head>
+<body>
+    <h1>{% block heading %}News Form{% endblock %}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="id_title">Title:</label>
+        <input type="text" id="id_title" name="title" value="{{ form.title.value }}">
+        <br>
+        <label for="id_category">Category:</label>
+        <textarea id="id_category" name="category">{{ form.category.value }}</textarea>
+        <br>
+        <label for="id_description">Description:</label>
+        <input type="text" id="id_description" name="description" value="{{ form.description.value }}">
+        <br>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

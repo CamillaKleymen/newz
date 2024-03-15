@@ -10,7 +10,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(NewsModel)
 class NewsAdmin(admin.ModelAdmin):
-    list_display = ['pk', 'news_title', 'news_country', 'news_created_at']
+    list_display = ['pk', 'news_title', 'news_description', 'news_created_at']
     search_fields = ['news_title']
     list_filter = ['news_created_at']
     ordering = ['news_title']

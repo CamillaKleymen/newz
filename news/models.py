@@ -1,5 +1,5 @@
 from django.db import models
-
+from datetime import date
 
 class CategoryModel(models.Model):
     category_title = models.CharField(max_length=30)
@@ -17,7 +17,7 @@ class NewsModel(models.Model):
     news_title = models.CharField(max_length=50)
     news_category = models.ForeignKey(CategoryModel, on_delete=models.CASCADE)
     news_country = models.CharField(max_length=30)
-    news_date = models.DateField()
+    news_date = models.DateField(default=date)
     news_description = models.TextField()
     news_image = models.FileField(upload_to='news_images')
     news_created_at = models.DateTimeField(auto_now_add=True)
