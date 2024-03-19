@@ -17,7 +17,11 @@ class NewsModel(models.Model):
     news_title = models.CharField(max_length=50)
     news_category = models.ForeignKey(CategoryModel, on_delete=models.CASCADE)
     news_country = models.CharField(max_length=30)
+<<<<<<< HEAD
     news_date = models.DateField()
+=======
+    news_date = models.DateField(default=date)
+>>>>>>> 77ced790e329732b33d64c36c9ac7bb45d3f7198
     news_description = models.TextField()
     news_image = models.FileField(upload_to='news_images')
     news_created_at = models.DateTimeField(auto_now_add=True)

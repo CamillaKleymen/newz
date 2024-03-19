@@ -55,7 +55,11 @@ ROOT_URLCONF = 'newz.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+<<<<<<< HEAD
         'DIRS': [BASE_DIR / 'templates'],
+=======
+        'DIRS': [],
+>>>>>>> 77ced790e329732b33d64c36c9ac7bb45d3f7198
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,6 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+<<<<<<< HEAD
 STATIC_ROOT = BASE_DIR / 'static'
 
 import os
@@ -124,6 +129,9 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR / 'assets',),)
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+=======
+
+>>>>>>> 77ced790e329732b33d64c36c9ac7bb45d3f7198
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
