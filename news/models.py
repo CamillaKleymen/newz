@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import date
 
+
 class CategoryModel(models.Model):
     category_title = models.CharField(max_length=30)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -11,6 +12,8 @@ class CategoryModel(models.Model):
     class Meta:
         verbose_name = 'News category'
         verbose_name_plural = 'News categories'
+
+
 class NewsModel(models.Model):  # Добавлено определение модели NewsModel
     news_title = models.CharField(max_length=50)
     news_category = models.ForeignKey(CategoryModel, on_delete=models.CASCADE)
@@ -26,6 +29,8 @@ class NewsModel(models.Model):  # Добавлено определение мо
     class Meta:
         verbose_name = 'News'
         verbose_name_plural = 'News'
+
+
 class Cultural(models.Model):
     news_title = models.CharField(max_length=50)
     news_category = models.ForeignKey(CategoryModel, on_delete=models.CASCADE)
@@ -42,7 +47,8 @@ class Cultural(models.Model):
         verbose_name = 'Cultural'
         verbose_name_plural = 'Cultural News'
 
-class National(models.Model):
+
+class National_url(models.Model):
     news_title = models.CharField(max_length=50)
     news_category = models.ForeignKey(CategoryModel, on_delete=models.CASCADE)
     news_date = models.DateField()
@@ -56,6 +62,7 @@ class National(models.Model):
     class Meta:
         verbose_name = 'National'
         verbose_name_plural = 'National News'
+
 
 class TechScience(models.Model):
     news_title = models.CharField(max_length=50)
@@ -72,6 +79,7 @@ class TechScience(models.Model):
     class Meta:
         verbose_name = 'Tech & Science'
         verbose_name_plural = 'Tech & Science News'
+
 
 class WorldNews(models.Model):
     news_title = models.CharField(max_length=50)

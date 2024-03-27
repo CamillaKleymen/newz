@@ -20,7 +20,7 @@ from news.views import (
     NewsDetail,
     NewsDelete,
     сultural,
-    National,
+    National_urls,
     Tech_science,
     World_news,
 )
@@ -34,7 +34,7 @@ urlpatterns = [
     path('detail/<int:pk>/', NewsDetail.as_view(), name='news_detail'),
     path('delete/<int:pk>/', NewsDelete.as_view(), name='news_delete'),
     path('cultural/', сultural.as_view(), name='cultural'),
-    path('national/', National.as_view(), name='national'),
+    path('national/', National_urls.as_view(), name='national'),
     path('tech-science/', Tech_science.as_view(), name='tech_science'),
     path('world-news/', World_news.as_view(), name='world_news'),
 ]
