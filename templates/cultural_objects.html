@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cultural</title>
+</head>
+<body>
+    Title of news: {{ cultural.news_title }}<br>
+    Description: {{ cultural.news_description }}<br>
+    News category: {{ cultural.news_category }}<br>
+    Category: <a href="/category/{{ cultural.news_category.id }}">{{ cultural.news_category.id }}</a>
+</body>
+</html>

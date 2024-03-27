@@ -1,45 +1,87 @@
-<<<<<<< HEAD
 {% load static %}
-=======
-{% static load%}
->>>>>>> 77ced790e329732b33d64c36c9ac7bb45d3f7198
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}News Form{% endblock %}</title>
-<<<<<<< HEAD
-    <link rel = "stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <link rel = "stylesheet" href="{% static 'css/font-awesome.min.css' %}">
-    <link rel = "stylesheet" href="{% static 'css/style.css' %}">
-    <link rel = "stylesheet" href="{% static 'css/responsive.css' %}">
-    <link rel = "stylesheet" href="{% static 'css/colors.css' %}">
-
-
+    <title>{% block title %}News Website{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'hello.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/colors.css' %}">
+    <link rel="stylesheet" href="{% static 'css/version/tech.css' %}">
 </head>
 <body>
-<h3>NEWS WEBSITE</h3>
- {% for i in news %}
-    {{ i }}
-{% endfor %}
-=======
-</head>
-<body>
-    <h1>{% block heading %}News Form{% endblock %}</h1>
-    <form method="POST">
-        {% csrf_token %}
-        <label for="id_title">Title:</label>
-        <input type="text" id="id_title" name="title" value="{{ form.title.value }}">
-        <br>
-        <label for="id_category">Category:</label>
-        <textarea id="id_category" name="category">{{ form.category.value }}</textarea>
-        <br>
-        <label for="id_description">Description:</label>
-        <input type="text" id="id_description" name="description" value="{{ form.description.value }}">
-        <br>
-        <button type="submit">Save</button>
-    </form>
->>>>>>> 77ced790e329732b33d64c36c9ac7bb45d3f7198
+    <div id="wrapper">
+        <header class="tech-header header">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#world-news">World News</a></li>
+                    <li><a href="#national-news">National News</a></li>
+                    <li><a href="#science-tech">Science & Technology</a></li>
+                    <li><a href="#cultural">Cultural News</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="container">
+            <section id="main" class="main-section">
+                <h2>Main Page</h2>
+                <!-- Отображение актуальных статей на главной странице -->
+                {% for article in main_articles %}
+                    <div>
+                        <h4>{{ article.title }}</h4>
+                        <p>{{ article.content }}</p>
+                    </div>
+                {% endfor %}
+            </section>
+
+            <section id="world-news" class="category-section">
+                <h2>World News</h2>
+                {% for article in world_news_articles %}
+                    <div>
+                        <h4>{{ article.title }}</h4>
+                        <p>{{ article.content }}</p>
+                    </div>
+                {% endfor %}
+            </section>
+
+            <section id="national-news" class="category-section">
+                <h2>National News</h2>
+                {% for article in national_news_articles %}
+                    <div>
+                        <h4>{{ article.title }}</h4>
+                        <p>{{ article.content }}</p>
+                    </div>
+                {% endfor %}
+            </section>
+
+            <section id="science-tech" class="category-section">
+                <h2>Science & Technology</h2>
+                {% for article in science_tech_articles %}
+                    <div>
+                        <h4>{{ article.title }}</h4>
+                        <p>{{ article.content }}</p>
+                    </div>
+                {% endfor %}
+            </section>
+
+            <section id="cultural" class="category-section">
+                <h2>Cultural News</h2>
+                {% for article in cultural_articles %}
+                    <div>
+                        <h4>{{ article.title }}</h4>
+                        <p>{{ article.content }}</p>
+                    </div>
+                {% endfor %}
+            </section>
+        </div>
+    </div>
+
+    <script src="{% static 'js/jquery-3.6.>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 </body>
 </html>

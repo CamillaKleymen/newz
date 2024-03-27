@@ -1,43 +1,44 @@
-"""
-URL configuration for newz project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.urls import path
-<<<<<<< HEAD
+from django import forms
+from news import forms
+# from news.views import (
+#     NewsCreateView, NewsUpdateView, NewsListView, NewsDetailView, NewsDeleteView,
+#     cultural_news, world_news, national_news, tech_science_page
+# )
 from django.contrib import admin
-from news import views
 from django.conf.urls.static import static
 from django.conf import settings
+# from .views import HomePage
+
+
+from django.urls import path
+from news.views import (
+    HomePage,
+    NewsCreateView,
+    NewsUpdate,
+    NewsList,
+    NewsDetail,
+    NewsDelete,
+    сultural,
+    National,
+    Tech_science,
+    World_news,
+)
 
 urlpatterns = [
+    path('', HomePage.as_view(), name='home'),
     path('admin/', admin.site.urls),
-=======
-from news import views
-
-urlpatterns = [
->>>>>>> 77ced790e329732b33d64c36c9ac7bb45d3f7198
-    path('', views.news_list, name='news_list'),
-    path('news/<int:pk>/', views.news_detail, name='news_detail'),
-    path('news/new/', views.news_create, name='news_create'),
-    path('news/<int:pk>/edit/', views.news_update, name='news_update'),
-    path('news/<int:pk>/delete/', views.news_delete, name='news_delete'),
-<<<<<<< HEAD
-
+    path('create/', NewsCreateView.as_view(), name='news_create'),
+    path('update/<int:pk>/', NewsUpdate.as_view(), name='news_update'),
+    path('list/', NewsList.as_view(), name='news_list'),
+    path('detail/<int:pk>/', NewsDetail.as_view(), name='news_detail'),
+    path('delete/<int:pk>/', NewsDelete.as_view(), name='news_delete'),
+    path('cultural/', сultural.as_view(), name='cultural'),
+    path('national/', National.as_view(), name='national'),
+    path('tech-science/', Tech_science.as_view(), name='tech_science'),
+    path('world-news/', World_news.as_view(), name='world_news'),
 ]
-urlpatterns += static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
-=======
-]
->>>>>>> 77ced790e329732b33d64c36c9ac7bb45d3f7198
+
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

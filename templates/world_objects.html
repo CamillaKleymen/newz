@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>World</title>
+</head>
+<body>
+    Title of news: {{ world_news.news_title }}<br>
+    Description: {{ world_news.news_description }}<br>
+    News category: {{ world_news.news_category }}<br>
+    Category: <a href="/category/{{ world.news_category.id }}">{{ world.news_category.id }}</a>
+</body>
+</html>

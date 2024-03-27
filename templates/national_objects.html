@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>National</title>
+</head>
+<body>
+    Title of news: {{ national.news_title }}<br>
+    Description: {{ national.news_description }}<br>
+    News category: {{ national.news_category }}<br>
+    Category: <a href="/category/{{ national.news_category.id }}">{{ national.news_category.id }}</a>
+</body>
+</html>

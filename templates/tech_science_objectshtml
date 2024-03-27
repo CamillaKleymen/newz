@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tech</title>
+</head>
+<body>
+    Title of news: {{ tech_science.news_title }}<br>
+    Description: {{ tech_science.news_description }}<br>
+    News category: {{ tech_science.news_category }}<br>
+    Category: <a href="/category/{{ tech_science.news_category.id }}">{{ tech_science.news_category.id }}</a>
+</body>
+</html>
